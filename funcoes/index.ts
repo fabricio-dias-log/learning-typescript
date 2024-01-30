@@ -40,3 +40,19 @@ function mergeObject<U, T>(obj1: U, obj2: T) {
 
 const newPerson = mergeObject({name: "Fabricio"}, {age: 24, job:"Developer"});
 console.log(newPerson);
+
+// 4 - constraint
+function biggestNumber<T extends number | string>(a: T, b: T): T {
+    let biggest: T;
+
+    if (+a > +b){
+        biggest = a;
+    } else {
+        biggest = b;
+    }
+
+    return biggest;
+}
+
+console.log(biggestNumber(1 ,2))
+console.log(biggestNumber("3" ,"50"))
