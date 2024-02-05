@@ -58,3 +58,9 @@ function modernGreeting(name, greet) {
 }
 console.log(modernGreeting("Fabricio"));
 console.log(modernGreeting("Fabricio", "Dr."));
+// 7 - Parametros default
+function somaDefault(n, m = 10) {
+    return n + m;
+}
+console.log(somaDefault(10));
+console.log(somaDefault(10, 40));
