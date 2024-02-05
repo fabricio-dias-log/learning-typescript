@@ -64,3 +64,14 @@ function somaDefault(n, m = 10) {
 }
 console.log(somaDefault(10));
 console.log(somaDefault(10, 40));
+// 8 - Unknown
+function doSomething(x) {
+    if (Array.isArray(x)) {
+        console.log(x[1]);
+    }
+    else if (typeof x === "number") {
+        console.log("X is a number");
+    }
+}
+doSomething([1, 2, 3]);
+doSomething(5);
