@@ -80,3 +80,9 @@ function showErrorMessage(msg) {
     throw new Error(msg);
 }
 // showErrorMessage("Some Error")
+// 10 - Rest Operator
+function sumAll(...n) {
+    return n.reduce((number, sum) => number + sum);
+}
+console.log(sumAll(1, 2, 3, 4, 5, 3, 2));
+console.log(sumAll(2, 333, 987));
