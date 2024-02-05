@@ -96,3 +96,10 @@ function doSomething(x: unknown): void{
 
 doSomething([1,2,3])
 doSomething(5)
+
+// 9 - Type Never
+function showErrorMessage(msg: string): never {
+    throw new Error(msg);
+}
+
+// showErrorMessage("Some Error")
