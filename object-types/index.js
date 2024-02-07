@@ -22,3 +22,5 @@ const u1 = { email: "test123@test.com", role: "Admin" };
 const u2 = { email: "weather@test.com" };
 showUserDetails(u1);
 showUserDetails(u2);
+const fusca = { brand: "VW", wheels: 4 };
+console.log(fusca);
