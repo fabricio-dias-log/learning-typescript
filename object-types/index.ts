@@ -19,3 +19,22 @@ const shirt: Product = {
 }
 showProductDetails(shirt);
 showProductDetails({name: "Sweater", price: 59.99, isAvailable: false});
+
+// 2 - Optional property in interface
+interface User {
+    email: string,
+    role ?: string
+}
+
+function showUserDetails(user: User) {
+    console.log(`The user e-mail is: ${user.email}`)
+    if (user.role) {
+        console.log(`The user role is: ${user.role}`)
+    }
+}
+
+const u1: User = {email: "test123@test.com", role:"Admin"};
+const u2: User = {email: "weather@test.com"}
+
+showUserDetails(u1)
+showUserDetails(u2)
