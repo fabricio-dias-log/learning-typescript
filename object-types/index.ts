@@ -134,3 +134,11 @@ console.log(anotherUser[0]);
 
 anotherUser[0] = "Lucas";
 console.log(anotherUser[0]);
+
+// 9 - Tuplas with readonly
+function showNumbers(numbers: readonly [number,number]) {
+    console.log(numbers[0]);
+    console.log(numbers[1]);
+}
+
+showNumbers([1, 3]);
