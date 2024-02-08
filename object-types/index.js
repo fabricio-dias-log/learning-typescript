@@ -59,3 +59,9 @@ myArr = myArr.map((item) => {
     return `Fruta: ${item}`;
 }); //possible change array value
 console.log(myArr);
+const myNumberArray = [1, 2, 3, 4, 5];
+console.log(myNumberArray);
+const anotherUser = ["Fabricio", 24];
+console.log(anotherUser[0]);
+anotherUser[0] = "Lucas";
+console.log(anotherUser[0]);
