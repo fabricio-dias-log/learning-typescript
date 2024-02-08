@@ -24,3 +24,9 @@ showUserDetails(u1);
 showUserDetails(u2);
 const fusca = { brand: "VW", wheels: 4 };
 console.log(fusca);
+let coords = {
+    x: 10
+    // 10: 10 -> erro
+};
+coords.y = 15;
+console.log(coords);

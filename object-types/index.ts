@@ -47,3 +47,18 @@ interface Car {
 
 const fusca: Car = {brand: "VW", wheels: 4}
 console.log(fusca)
+
+// 4 - Index signature
+interface CoordObject {
+    [index: string]: number
+}
+
+let coords: CoordObject = {
+    x: 10
+    // 10: 10 -> erro
+}
+
+coords.y = 15
+
+
+console.log(coords)
