@@ -30,3 +30,15 @@ let coords = {
 };
 coords.y = 15;
 console.log(coords);
+const fabricio = {
+    name: "Fabricio",
+    age: 24
+};
+const goku = {
+    name: "Kakaroto",
+    age: 100,
+    superpowers: ["Fly", "Kamehameha", "Genki Dama"]
+};
+console.log(fabricio);
+console.log(goku);
+console.log(goku.superpowers[1]);

@@ -60,5 +60,29 @@ let coords: CoordObject = {
 
 coords.y = 15
 
-
 console.log(coords)
+
+// 5 - Extending types
+interface Human {
+    name: string
+    age: number
+}
+
+interface SuperHuman extends Human {
+    superpowers: string[]
+}
+
+const fabricio: Human = {
+    name: "Fabricio",
+    age: 24
+}
+
+const goku: SuperHuman = {
+    name: "Kakaroto",
+    age: 100,
+    superpowers: ["Fly", "Kamehameha", "Genki Dama"]
+}
+
+console.log(fabricio);
+console.log(goku);
+console.log(goku.superpowers[1]);
