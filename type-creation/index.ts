@@ -80,3 +80,30 @@ const username2: typeof userName = "Louis";
 type x = typeof userName;
 
 const userName3: x = "Sophia";
+
+// 7 - Indexed Access type
+type Truck = {
+    km: number,
+    kg: number,
+    description: string
+}
+
+type Km = Truck["km"];
+
+const newTruck = {
+    km: 10000,
+    kg: 5000,
+    description: 'truck for little charges'
+}
+
+function showKm(km: Km): void {
+    console.log(`The vehicle has km: ${km}`);
+}
+showKm(newTruck.km);
+
+const newCar = {
+    km: 5000,
+    kg: 100
+}
+
+showKm(newCar.km);
