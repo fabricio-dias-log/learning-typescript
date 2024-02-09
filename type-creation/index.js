@@ -56,3 +56,4 @@ const newCar = {
     kg: 100
 };
 showKm(newCar.km);
+const someVar = 5;
