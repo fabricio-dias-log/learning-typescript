@@ -121,3 +121,15 @@ type myType = B extends A ? number : string;
 const someVar: myType = 5;
 
 type myTypeB = Test extends {showNumber(): number} ? string : boolean
+
+// 9 - Template literals type
+type testA = "text"
+
+type CustomType = `some ${testA}`;
+
+const testing: CustomType = "some text" //need to be exactly Custom type value
+
+type a1 = "Testing";
+type a2 = "Union";
+
+type a3 = `${a1}` | `${a2}`

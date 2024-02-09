@@ -57,3 +57,4 @@ const newCar = {
 };
 showKm(newCar.km);
 const someVar = 5;
+const testing = "some text"; //need to be exactly Custom type value
