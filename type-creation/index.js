@@ -28,4 +28,13 @@ const server = {
     ram: '8GB'
 };
 console.log(getSomeKey(server, 'ram'));
-// console.log(getSomeKey(server, 'teste')) error
+function showCharName(obj, keyName) {
+    return `${obj[keyName]}`;
+}
+const myChar = {
+    name: "Fabricio",
+    age: 24,
+    hasDriverLicense: true
+};
+console.log(showCharName(myChar, 'name'));
+console.log(showCharName(myChar, 'age'));
