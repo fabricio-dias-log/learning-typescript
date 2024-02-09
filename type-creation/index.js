@@ -15,4 +15,7 @@ const otherProduct = { name: "Cigarettes", cor: "white" };
 const thirdObj = { price: 39.99, category: "clothes" };
 console.log(showProductName(myObj));
 console.log(showProductName(otherProduct));
-// console.log(showProductName(thirdObj)); // dont works because there aren't name property
+const myCar = { name: "BMW X1", wheels: 15, engine: 2.0, color: "Blue" };
+const myPen = { name: "BIC", wheels: false, engine: false, color: "Black" };
+console.log(myCar);
+console.log(myPen);
