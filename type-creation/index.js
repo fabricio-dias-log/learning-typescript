@@ -19,3 +19,13 @@ const myCar = { name: "BMW X1", wheels: 15, engine: 2.0, color: "Blue" };
 const myPen = { name: "BIC", wheels: false, engine: false, color: "Black" };
 console.log(myCar);
 console.log(myPen);
+// 4 - Type Parameters
+function getSomeKey(obj, key) {
+    return `The key ${key} there is in object and has ${obj[key]} as value`;
+}
+const server = {
+    hd: '2TB',
+    ram: '8GB'
+};
+console.log(getSomeKey(server, 'ram'));
+// console.log(getSomeKey(server, 'teste')) error

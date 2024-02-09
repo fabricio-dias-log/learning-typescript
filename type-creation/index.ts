@@ -36,3 +36,16 @@ const myPen: Pen = {name: "BIC", wheels: false, engine: false, color: "Black"};
 
 console.log(myCar);
 console.log(myPen);
+
+// 4 - Type Parameters
+function getSomeKey<T, K extends keyof T>(obj: T, key: K) {
+    return `The key ${key} there is in object and has ${obj[key]} as value`
+}
+
+const server = {
+    hd: '2TB',
+    ram: '8GB'
+}
+
+console.log(getSomeKey(server, 'ram'))
+// console.log(getSomeKey(server, 'teste')) error
