@@ -39,7 +39,7 @@ console.log(myPen);
 
 // 4 - Type Parameters
 function getSomeKey<T, K extends keyof T>(obj: T, key: K) {
-    return `The key ${key} there is in object and has ${obj[key]} as value`
+    return `The key ${obj[key]} there is in object and has ${obj[key]} as value`
 }
 
 const server = {
@@ -71,3 +71,12 @@ const myChar: Character = {
 
 console.log(showCharName(myChar, 'name'))
 console.log(showCharName(myChar, 'age'))
+
+// 6 - Typeof type operator
+const userName: string = "Ash";
+
+const username2: typeof userName = "Louis";
+
+type x = typeof userName;
+
+const userName3: x = "Sophia";

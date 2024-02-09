@@ -21,7 +21,7 @@ console.log(myCar);
 console.log(myPen);
 // 4 - Type Parameters
 function getSomeKey(obj, key) {
-    return `The key ${key} there is in object and has ${obj[key]} as value`;
+    return `The key ${obj[key]} there is in object and has ${obj[key]} as value`;
 }
 const server = {
     hd: '2TB',
@@ -38,3 +38,7 @@ const myChar = {
 };
 console.log(showCharName(myChar, 'name'));
 console.log(showCharName(myChar, 'age'));
+// 6 - Typeof type operator
+const userName = "Ash";
+const username2 = "Louis";
+const userName3 = "Sophia";
