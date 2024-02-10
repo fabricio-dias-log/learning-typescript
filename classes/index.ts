@@ -64,4 +64,22 @@ const destroyer = new KillerMachine("Destroyer", 4)
 console.log(trator);
 console.log(destroyer);
 
+// 5 - Methods
+class Dwarf {
+    name
 
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    gretting() {
+        console.log("Hello stranger");
+    }
+}
+
+const zangado = new Dwarf("Zangado");
+console.log(zangado.name);
+
+zangado.gretting();
+
+console.log(zangado);
