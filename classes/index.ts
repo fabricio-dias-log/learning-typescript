@@ -23,3 +23,21 @@ class NewUser {
 
 const jonas = new NewUser("Jonas", 15);
 console.log(jonas);
+
+// 3 - Fields readonly
+class Car {
+    name
+    readonly wheels = 14
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+const bmw: Car = new Car("X1");
+console.log(bmw);
+console.log(bmw.wheels);
+
+bmw.name = "X3";
+
+
