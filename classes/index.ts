@@ -83,3 +83,25 @@ console.log(zangado.name);
 zangado.gretting();
 
 console.log(zangado);
+
+// 6 - This in class
+
+class Truck {
+    model
+    hp
+
+    constructor(model: string, hp: number) {
+        this.model = model;
+        this.hp = hp;
+    }
+
+    showDetails() {
+        console.log(`Caminhão do modelo ${this.model}, que tem ${this.hp} cavalos de potência`)
+    }
+}
+
+const volvo = new Truck("Volvo", 4000);
+const scania = new Truck("Scania", 3000);
+
+volvo.showDetails();
+scania.showDetails();
