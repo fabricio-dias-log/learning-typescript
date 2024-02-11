@@ -13,3 +13,8 @@ console.log(a);
 console.log(b);
 console.log(c);
 myFunction();
+
+// 4 - Alias for import
+import { someName as name } from "./chaneName";
+
+console.log(name);

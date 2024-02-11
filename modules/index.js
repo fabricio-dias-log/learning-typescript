@@ -15,3 +15,6 @@ console.log(multiple_1.a);
 console.log(multiple_1.b);
 console.log(multiple_1.c);
 (0, multiple_1.myFunction)();
+// 4 - Alias for import
+const chaneName_1 = require("./chaneName");
+console.log(chaneName_1.someName);
