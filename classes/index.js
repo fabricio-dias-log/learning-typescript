@@ -237,3 +237,11 @@ const newShirt = new ParameterProperties("Shirt", 5, 19.99);
 console.log(newShirt.name);
 console.log(newShirt.showQty);
 console.log(newShirt.showPrice);
+// 15 - Class expressions
+const myClass = class {
+    constructor(name) {
+        this.name = name;
+    }
+};
+const pessoa = new myClass("Jones");
+console.log(pessoa);
