@@ -138,3 +138,54 @@ class Nova extends Base {
 }
 const myObject = new Nova();
 myObject.someMethod();
+// 11 - Visibility
+// public
+class C {
+    constructor() {
+        this.x = 10;
+    }
+}
+class D extends C {
+}
+const cInstance = new C();
+console.log(cInstance.x);
+const dInstance = new D();
+console.log(dInstance.x);
+// protected
+class E {
+    constructor() {
+        this.x = 101;
+    }
+    protectedMethod() {
+        console.log("This method is protected");
+    }
+}
+class F extends E {
+    showX() {
+        console.log("x: " + this.x);
+    }
+    showProtectedMethod() {
+        this.protectedMethod();
+    }
+}
+const fInstance = new F();
+fInstance.showX();
+fInstance.showProtectedMethod();
+//private
+class PrivateClass {
+    constructor() {
+        this.name = "Private";
+    }
+    showName() {
+        return this.name;
+    }
+    privateMethod() {
+        console.log("Private Method");
+    }
+    showPrivateMethod() {
+        this.privateMethod();
+    }
+}
+const pObj = new PrivateClass();
+console.log(pObj.showName());
+pObj.showPrivateMethod();
