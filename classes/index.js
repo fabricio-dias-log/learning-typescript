@@ -105,3 +105,23 @@ myCoords.fillX = 15;
 myCoords.fillY = 10;
 console.log(myCoords);
 console.log(myCoords.getCoords);
+class blogPost {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título do post é: ${this.title}`;
+    }
+}
+const myPost = new blogPost("hello world");
+console.log(myPost.itemTitle());
+class TestingInterface {
+    constructor(title) {
+        this.title = title;
+    }
+    itemTitle() {
+        return `O título é: ${this.title}`;
+    }
+}
+const otherPost = new TestingInterface("println");
+console.log(otherPost.itemTitle());

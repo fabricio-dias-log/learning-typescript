@@ -156,4 +156,39 @@ myCoords.fillX = 15;
 myCoords.fillY = 10;
 
 console.log(myCoords)
-console.log(myCoords.getCoords)
+console.log(myCoords.getCoords);
+
+// 9 - Heritage and interface
+interface showTitle{
+    itemTitle(): string
+}
+
+class blogPost implements showTitle {
+    title
+
+    constructor(title: string) {
+        this.title = title;
+    }
+
+    itemTitle(): string {
+        return `O título do post é: ${this.title}`;
+    }
+}
+
+const myPost  = new blogPost("hello world");
+console.log(myPost.itemTitle())
+
+class TestingInterface implements showTitle{
+    title
+
+    constructor(title: string) {
+        this.title = title;
+    }
+
+    itemTitle(): string {
+        return `O título é: ${this.title}`;
+    }
+}
+
+const otherPost  = new TestingInterface("println");
+console.log(otherPost.itemTitle())
