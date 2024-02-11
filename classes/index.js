@@ -125,3 +125,16 @@ class TestingInterface {
 }
 const otherPost = new TestingInterface("println");
 console.log(otherPost.itemTitle());
+// 10 - Override in methods
+class Base {
+    someMethod() {
+        console.log("Something");
+    }
+}
+class Nova extends Base {
+    someMethod() {
+        console.log("Testing other function");
+    }
+}
+const myObject = new Nova();
+myObject.someMethod();
