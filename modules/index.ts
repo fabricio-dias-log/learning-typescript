@@ -28,3 +28,19 @@ const nX = myNumbers.n1;
 console.log(nX);
 
 myNumbers.showNumber();
+
+// 6 - Import Types
+import { Human } from "./myType";
+
+class User implements Human{
+    name
+    age
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+const fabricio = new User("Fabricio", 24);
+console.log(fabricio);
