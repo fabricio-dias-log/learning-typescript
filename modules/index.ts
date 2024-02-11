@@ -18,3 +18,13 @@ myFunction();
 import { someName as name } from "./chaneName";
 
 console.log(name);
+
+// 5 - Importing all data
+import * as myNumbers from './numbers';
+
+console.log(myNumbers);
+
+const nX = myNumbers.n1;
+console.log(nX);
+
+myNumbers.showNumber();
