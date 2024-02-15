@@ -92,3 +92,24 @@ __decorate([
 ], Machine.prototype, "showName", null);
 const trator = new Machine("Trator");
 console.log(trator.showName());
+// Acessor Decorator
+class Monster {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    get showName() {
+        return `The monster name is: ${this.name}`;
+    }
+    get showAge() {
+        return `The monster age is: ${this.age}`;
+    }
+}
+__decorate([
+    enumerable(true)
+], Monster.prototype, "showName", null);
+__decorate([
+    enumerable(true)
+], Monster.prototype, "showAge", null);
+const pokemon = new Monster("Charmander", 12);
+console.log(pokemon);

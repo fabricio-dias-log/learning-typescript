@@ -80,7 +80,6 @@ const fabricio = new User("Fabricio");
 console.log(fabricio);
 
 // Method Decorator
-
 function enumerable(value: boolean) {
     return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         descriptor.enumerable = value;
@@ -103,3 +102,28 @@ class Machine {
 
 const trator = new Machine("Trator");
 console.log(trator.showName());
+
+// Acessor Decorator
+class Monster {
+    name?
+    age?
+
+    constructor (name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @enumerable(true)
+    get showName() {
+        return `The monster name is: ${this.name}`
+    }
+
+    @enumerable(true)
+    get showAge() {
+        return `The monster age is: ${this.age}`
+    }
+}
+
+const pokemon = new Monster("Charmander", 12);
+console.log(pokemon);
+
