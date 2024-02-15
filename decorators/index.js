@@ -113,3 +113,30 @@ __decorate([
 ], Monster.prototype, "showAge", null);
 const pokemon = new Monster("Charmander", 12);
 console.log(pokemon);
+// Property Decorator
+function formatNumber() {
+    return function (target, propertyKey) {
+        let value;
+        const getter = function () {
+            return value;
+        };
+        const setter = function (newVal) {
+            value = newVal.padStart(5, "0");
+        };
+        Object.defineProperty(target, propertyKey, {
+            set: setter,
+            get: getter,
+        });
+    };
+}
+class ID {
+    constructor(id) {
+        this.id = id;
+    }
+}
+__decorate([
+    formatNumber()
+], ID.prototype, "id", void 0);
+const newItem = new ID("2");
+console.log(newItem);
+console.log(newItem.id);
