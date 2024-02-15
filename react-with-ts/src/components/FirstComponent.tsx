@@ -1,11 +1,11 @@
 import React from 'react'
 
-type Props = {}
 
-const firstComponent = (props: Props) => {
+
+const FirstComponent = () => {
   return (
     <div>First Component</div>
   )
 }
 
-export default firstComponent
+export default FirstComponent

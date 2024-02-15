@@ -1,4 +1,6 @@
 import React from 'react';
+// import component
+import  FirstComponent  from "./components/FirstComponent";
 
 function App() {
   // Variables
@@ -21,6 +23,7 @@ function App() {
       )}
 
       <h3>{userGreeting(name)}</h3>
+      <FirstComponent/>
     </div>
   );
 }
