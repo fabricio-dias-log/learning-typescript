@@ -28,3 +28,33 @@ class MyClass {
 const myObj = new MyClass();
 
 myObj.testing();
+
+// Mutiple decorators
+function a() {
+    return function(target: any, propertyKey:string, descriptor: PropertyDescriptor) {
+        console.log("Executed the function A");
+    }
+}
+function b() {
+    return function(target: any, propertyKey:string, descriptor: PropertyDescriptor) {
+        console.log("Executed the function B");
+    }
+}
+function c() {
+    return function(target: any, propertyKey:string, descriptor: PropertyDescriptor) {
+        console.log("Executed the function C");
+    }
+}
+
+class MutipleDecorators {
+    @c()
+    @a()
+    @b()
+    testing(){
+        console.log("Ending execution");
+    }
+}
+
+const mutiple = new MutipleDecorators();
+
+mutiple.testing();
