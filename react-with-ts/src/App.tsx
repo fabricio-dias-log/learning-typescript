@@ -1,6 +1,9 @@
 import React from 'react';
 // import component
 import  FirstComponent  from "./components/FirstComponent";
+// destructuring props
+import SecondComponent from './components/SecondComponent';
+import Destructuring from './components/Destructuring';
 
 function App() {
   // Variables
@@ -24,6 +27,19 @@ function App() {
 
       <h3>{userGreeting(name)}</h3>
       <FirstComponent/>
+      <SecondComponent name='Second'/>
+      <Destructuring 
+        title='First Post' 
+        content='Some content' 
+        commentsQty={12} 
+        tags={['Cool','Nice','Bad']}
+      />
+      <Destructuring 
+        title='Second Post' 
+        content='Some content' 
+        commentsQty={122} 
+        tags={['JS','TS','Python']}
+      />
     </div>
   );
 }
