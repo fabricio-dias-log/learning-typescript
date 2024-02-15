@@ -58,3 +58,23 @@ class MutipleDecorators {
 const mutiple = new MutipleDecorators();
 
 mutiple.testing();
+
+// Class Decorator
+function classDecorator(constructor: Function) {
+   console.log(constructor);
+
+    if (constructor.name === "User") {
+        console.log("Creating User!");
+    }
+}
+@classDecorator
+class User {
+    name
+
+    constructor(name: string){
+        this.name = name;
+    }
+}
+
+const fabricio = new User("Fabricio");
+console.log(fabricio);
