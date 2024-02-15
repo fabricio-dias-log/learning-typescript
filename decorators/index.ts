@@ -227,5 +227,38 @@ newPost.post("My third post", newPost.alreadyPost);
 newSecondPost.post("My second post", newSecondPost.alreadyPost);
 newSecondPost.post("My third post", newSecondPost.alreadyPost);
 
+// Real example property decorator
+function Max(limit: number) {
+    return function (target: any, propertyKey: string) {
+        let value: string;
 
+        const getter = function() {
+            return value;
+        }
+
+        const setter = function(newVal: string) {
+            if (newVal.length > limit) {
+                console.log(`The value must have a maximum of ${limit} characters`);
+            } else {
+                value = newVal;
+            }
+        }
+
+        Object.defineProperty(target, propertyKey, {
+            set: setter,
+            get: getter,
+        });
+    }
+}
+class Admin {
+    @Max(10)
+    userName;
+
+    constructor (userName: string) {
+        this.userName = userName;
+    }
+}
+
+const jose = new Admin("José");
+const raimundo = new Admin("Raimundo Silva");
 
