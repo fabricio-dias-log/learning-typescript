@@ -166,3 +166,37 @@ console.log(newBook.createdAt);
 const newPen = new Pen(32);
 console.log(newPen);
 console.log(newPen.createdAt);
+// Real example method decorator
+function checkIfUserPosted() {
+    return function (target, key, descriptor) {
+        const childFunction = descriptor.value;
+        console.log(childFunction);
+        descriptor.value = function (...args) {
+            if (args[1] === true) {
+                console.log("The user has already posted");
+                return null;
+            }
+            else {
+                return childFunction.apply(this, args);
+            }
+        };
+    };
+}
+class Post {
+    constructor() {
+        this.alreadyPost = false;
+    }
+    post(content, alreadyPost) {
+        this.alreadyPost = true;
+        console.log(`User post: ${content}`);
+    }
+}
+__decorate([
+    checkIfUserPosted()
+], Post.prototype, "post", null);
+const newPost = new Post();
+const newSecondPost = new Post();
+newPost.post("My first post", newPost.alreadyPost);
+newPost.post("My third post", newPost.alreadyPost);
+newSecondPost.post("My second post", newSecondPost.alreadyPost);
+newSecondPost.post("My third post", newSecondPost.alreadyPost);
