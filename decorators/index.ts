@@ -61,7 +61,7 @@ mutiple.testing();
 
 // Class Decorator
 function classDecorator(constructor: Function) {
-   console.log(constructor);
+    console.log(constructor);
 
     if (constructor.name === "User") {
         console.log("Creating User!");
@@ -78,3 +78,28 @@ class User {
 
 const fabricio = new User("Fabricio");
 console.log(fabricio);
+
+// Method Decorator
+
+function enumerable(value: boolean) {
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        descriptor.enumerable = value;
+    }
+}
+class Machine {
+    name
+
+    constructor (name: string) {
+        this.name = name
+    }
+
+    @enumerable(true)
+    showName() {
+        console.log(this);
+        
+        return `The machine name is: ${this.name}`
+    }
+}
+
+const trator = new Machine("Trator");
+console.log(trator.showName());

@@ -72,3 +72,23 @@ User = __decorate([
 ], User);
 const fabricio = new User("Fabricio");
 console.log(fabricio);
+// Method Decorator
+function enumerable(value) {
+    return function (target, propertyKey, descriptor) {
+        descriptor.enumerable = value;
+    };
+}
+class Machine {
+    constructor(name) {
+        this.name = name;
+    }
+    showName() {
+        console.log(this);
+        return `The machine name is: ${this.name}`;
+    }
+}
+__decorate([
+    enumerable(true)
+], Machine.prototype, "showName", null);
+const trator = new Machine("Trator");
+console.log(trator.showName());
