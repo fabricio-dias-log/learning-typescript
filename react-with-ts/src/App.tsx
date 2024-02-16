@@ -8,6 +8,11 @@ import Destructuring, {Category} from './components/Destructuring';
 // Using hooks
 import State from './components/State';
 
+// Type
+
+type textOrNull = string | null;
+type fixed = 'This' | 'Or' | 'That';
+
 function App() {
   // Variables
   const name: string = "Fabricio";
@@ -18,6 +23,14 @@ function App() {
   const userGreeting = (name: string): string => {
     return `Hello, ${name}`
   }
+
+  // Type
+  const myText: textOrNull = "There is some text here";
+  let mySecondText: textOrNull = null;
+
+  // mySecondText = 'Hello!';
+
+  const testingFixed: fixed = 'That';
 
   return (
     <div className="App">
@@ -54,6 +67,15 @@ function App() {
       />
 
       <State/>
+      {myText &&
+        <p>text is variable</p>
+      }
+      {mySecondText &&
+        <p>there is second text in variable</p>
+      }
+      {testingFixed &&
+        <p>{testingFixed}</p>
+      }
     </div>
   );
 }
