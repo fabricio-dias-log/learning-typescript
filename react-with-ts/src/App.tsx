@@ -5,6 +5,9 @@ import  FirstComponent  from "./components/FirstComponent";
 import SecondComponent from './components/SecondComponent';
 import Destructuring from './components/Destructuring';
 
+//hooks
+import State from './components/State';
+
 function App() {
   // Variables
   const name: string = "Fabricio";
@@ -40,6 +43,8 @@ function App() {
         commentsQty={122} 
         tags={['JS','TS','Python']}
       />
+
+      <State/>
     </div>
   );
 }
