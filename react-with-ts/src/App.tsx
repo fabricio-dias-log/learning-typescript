@@ -7,6 +7,7 @@ import Destructuring, {Category} from './components/Destructuring';
 
 // Using hooks
 import State from './components/State';
+import Context from './components/Context';
 
 // Type
 
@@ -93,6 +94,8 @@ function App() {
       {testingFixed &&
         <p>{testingFixed}</p>
       }
+
+      <Context/>
     </div>
     </AppContext.Provider>
   );
