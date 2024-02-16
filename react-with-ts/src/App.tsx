@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 // import component
 import  FirstComponent  from "./components/FirstComponent";
 // destructuring props
@@ -12,6 +12,15 @@ import State from './components/State';
 
 type textOrNull = string | null;
 type fixed = 'This' | 'Or' | 'That';
+
+// Context
+interface IAppContext {
+  language: string
+  framework: string
+  projects: number
+}
+
+export const AppContext = createContext<IAppContext | null>(null);
 
 function App() {
   // Variables
@@ -32,7 +41,15 @@ function App() {
 
   const testingFixed: fixed = 'That';
 
+  // Context
+  const contextValue: IAppContext = {
+    language: 'TypeScript',
+    framework: 'Express',
+    projects: 5,
+  };
+
   return (
+    <AppContext.Provider value={contextValue}>
     <div className="App">
       <h1>TypeScript with React</h1>
       <h2>Name: { name }</h2>
@@ -77,6 +94,7 @@ function App() {
         <p>{testingFixed}</p>
       }
     </div>
+    </AppContext.Provider>
   );
 }
 
