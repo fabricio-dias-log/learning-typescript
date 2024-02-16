@@ -3,9 +3,9 @@ import React from 'react';
 import  FirstComponent  from "./components/FirstComponent";
 // destructuring props
 import SecondComponent from './components/SecondComponent';
-import Destructuring from './components/Destructuring';
+import Destructuring, {Category} from './components/Destructuring';
 
-//hooks
+// Using hooks
 import State from './components/State';
 
 function App() {
@@ -36,12 +36,21 @@ function App() {
         content='Some content' 
         commentsQty={12} 
         tags={['Cool','Nice','Bad']}
+        category={Category.JS}
       />
       <Destructuring 
         title='Second Post' 
         content='Some content' 
         commentsQty={122} 
         tags={['JS','TS','Python']}
+        category={Category.TS}
+      />
+      <Destructuring 
+        title='Third Post' 
+        content='Some content' 
+        commentsQty={122} 
+        tags={['Python']}
+        category={Category.P}
       />
 
       <State/>
