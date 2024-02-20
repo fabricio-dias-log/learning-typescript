@@ -114,3 +114,15 @@ app.get('/api/user/:id/details/:name',
     
     return res.json({status: true});
 })
+
+// Handling errors
+app.get('/api/error', (req: Request, res: Response) => {
+    try {
+        // logic
+        throw new Error('Error');
+    } catch (e: any) {
+        console.log(e.message);
+        return res.status(500).json({ msg: 'An error occurred' });
+    }
+    
+})
