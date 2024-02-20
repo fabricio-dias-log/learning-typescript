@@ -42,3 +42,12 @@ app.get('/api/interfaces', (req: Request, res: Response) => {
     return res.send('Using interfaces');
 })
 
+// sending JSON
+app.get('/api/json', (req: Request, res: Response) => {
+    return res.json({ 
+        name: "Fabricio",
+        favoriteColor: "Blue",
+        message: 'Hello JSON' 
+    });
+})
+
