@@ -3,7 +3,7 @@
 // console.log('Express + TypeScript');
 
 // init express
-import express, { Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 
 const app = express();
 const port = 3000;
@@ -85,3 +85,16 @@ function getUser(req: Request, res: Response) {
 
 app.get('/api/user/:id', getUser)
 
+// Middleware
+function checkUser(req: Request, res: Response, next: NextFunction) {
+    if (req.params.id === '1') {
+        console.log("Passed");
+        next();
+    } else {
+        console.log("Restricted access!");
+    }
+}
+
+app.get('/api/user/:id/access', checkUser , (req: Request, res: Response) => {
+    return res.json({msg:'Welcome to administrator area'});
+})
