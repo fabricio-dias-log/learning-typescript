@@ -51,3 +51,17 @@ app.get('/api/json', (req: Request, res: Response) => {
     });
 })
 
+// router parameters
+app.get('/api/products/:id', (req: Request, res: Response) => {
+    const id = req.params.id;
+    if (id === '1') {
+        const product = {
+            id: 1,
+            name: 'Shoes',
+            price: 100.90
+        }
+        return res.json(product);
+    } else {
+        return res.send('Product not found');
+    }
+})
