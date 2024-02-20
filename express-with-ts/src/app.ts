@@ -3,7 +3,7 @@
 // console.log('Express + TypeScript');
 
 // init express
-import express from 'express';
+import express, { Request, Response } from 'express';
 
 const app = express();
 const port = 3000;
@@ -35,5 +35,10 @@ app.all('/api/products/check', (req, res) => {
     } else {
         return res.send('Cannot process this request');
     }
+})
+
+// interfaces of express
+app.get('/api/interfaces', (req: Request, res: Response) => {
+    return res.send('Using interfaces');
 })
 
