@@ -26,3 +26,14 @@ app.post('/api/products', (req, res) => {
     return res.send('Product added');
 })
 
+// create route for all verbs
+app.all('/api/products/check', (req, res) => {
+    if (req.method === 'POST') {
+        return res.send('Post some register');
+    } else if (req.method === 'GET') {
+        return res.send('Read some register');
+    } else {
+        return res.send('Cannot process this request');
+    }
+})
+
