@@ -105,3 +105,12 @@ function checkUser(req: Request, res: Response, next: NextFunction) {
 app.get('/api/user/:id/access', checkUser , (req: Request, res: Response) => {
     return res.json({msg:'Welcome to administrator area'});
 })
+
+// req and res with generics
+app.get('/api/user/:id/details/:name', 
+(req: Request<{id: string, name: string}>, res: Response<{status: boolean}>) => {
+    console.log(`ID: ${req.params.id}`);
+    console.log(`Name: ${req.params.name}`);
+    
+    return res.json({status: true});
+})
