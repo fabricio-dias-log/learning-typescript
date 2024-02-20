@@ -65,3 +65,14 @@ app.get('/api/products/:id', (req: Request, res: Response) => {
         return res.send('Product not found');
     }
 })
+
+// Complex routes
+app.get('/api/products/:id/review/:reviewId', (req: Request, res: Response) => {
+    const id = req.params.id;
+    const reviewId = req.params.reviewId;
+    
+    console.log(req.params);
+    
+    return res.send(`Product ${id} with review ${reviewId}`);
+})
+
