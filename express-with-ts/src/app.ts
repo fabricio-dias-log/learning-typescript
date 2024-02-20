@@ -11,6 +11,13 @@ const port = 3000;
 // (create a post route)
 app.use(express.json());
 
+// middlware for all routes
+function showPath(req: Request, res: Response, next: NextFunction) {
+    console.log('Request made to: '+ req.path);
+    next();
+}
+app.use(showPath);
+
 app.listen(port, () => {
     console.log(`Server is running in port ${port}`);    
 })
